@@ -2,8 +2,11 @@
 
 Streamnet-Gateway 是一套支持http/https协议的网关系统，由gateway服务、manager服务构成。
 
+### 环境要求
+etcd安装
+
 ### 开发初衷
-提供
+提供针对streamnet服务器请求的负载均衡，做到可视化配置，热生效
 
 ### 功能特性
 + 反向代理 
