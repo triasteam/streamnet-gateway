@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"github.com/dmhao/hgw/gateway/core"
+	"github.com/triasteam/streamnet-gateway/gateway/core"
 	"net/http"
 	"time"
 )

@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"github.com/justinas/alice"
-	"github.com/dmhao/hgw/gateway/core"
+	"github.com/triasteam/streamnet-gateway/gateway/core"
 	"net/http"
 )
 

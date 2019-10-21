@@ -3,8 +3,8 @@ package main
 import (
 	"crypto/tls"
 	"gopkg.in/alecthomas/kingpin.v2"
-	"github.com/dmhao/hgw/gateway/core"
-	"github.com/dmhao/hgw/gateway/router"
+	"github.com/triasteam/streamnet-gateway/gateway/core"
+	"github.com/triasteam/streamnet-gateway/gateway/router"
 	"net"
 	"net/http"
 	"os"

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"compress/gzip"
 	"github.com/axgle/mahonia"
-	"github.com/dmhao/hgw/gateway/core"
+	"github.com/triasteam/streamnet-gateway/gateway/core"
 	"io"
 	"io/ioutil"
 	"net/http"
