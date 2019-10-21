@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"github.com/didip/tollbooth/limiter"
-	"github.com/triasteam/streamnet-gateway/gateway/core"
-	"github.com/triasteam/streamnet-gateway/gateway/lb"
+	"../core"
+	"../lb"
 	"net/http"
 	"time"
 )

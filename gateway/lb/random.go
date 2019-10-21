@@ -1,7 +1,7 @@
 package lb
 
 import (
-	"github.com/triasteam/streamnet-gateway/gateway/core"
+	"../core"
 	"math/rand"
 )
 

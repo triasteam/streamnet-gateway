@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"github.com/sirupsen/logrus"
-	"github.com/triasteam/streamnet-gateway/gateway/core"
+	"../core"
 	"net/http"
 	"time"
 )

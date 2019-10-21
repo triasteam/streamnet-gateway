@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"github.com/coreos/etcd/clientv3"
 	"github.com/go-chi/chi"
-	"github.com/triasteam/streamnet-gateway/gateway/core"
-	"github.com/triasteam/streamnet-gateway/gateway/middleware"
+	"../core"
+	"../middleware"
 	"net/http"
 	"strings"
 )

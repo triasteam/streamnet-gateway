@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"github.com/triasteam/streamnet-gateway/gateway/lb"
+	"../lb"
 	"net/http"
 	"net/url"
 	"time"

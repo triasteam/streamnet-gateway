@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"gopkg.in/alecthomas/kingpin.v2"
-	"github.com/dmhao/hgw/manager/modules"
+	"./modules"
 )
 
 var (

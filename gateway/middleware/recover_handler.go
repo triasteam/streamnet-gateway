@@ -3,7 +3,7 @@ package middleware
 import (
 	"bytes"
 	"fmt"
-	"github.com/triasteam/streamnet-gateway/gateway/core"
+	"../core"
 	"io/ioutil"
 	"net/http"
 	"runtime"

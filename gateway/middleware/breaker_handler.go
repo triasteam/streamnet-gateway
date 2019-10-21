@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"github.com/afex/hystrix-go/hystrix"
-	"github.com/triasteam/streamnet-gateway/gateway/core"
+	"../core"
 	"net/http"
 )
 

@@ -2,7 +2,7 @@ package lb
 
 import (
 	"errors"
-	"github.com/triasteam/streamnet-gateway/gateway/core"
+	"../core"
 )
 type LoadBalance interface {
 	Target() (*core.Target, error)
