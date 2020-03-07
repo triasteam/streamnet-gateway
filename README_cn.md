@@ -1,59 +1,58 @@
-[中文说明](https://github.com/triasteam/streamnet-gateway/blob/master/README_cn.md)
 # Streamnet-Gateway
 
-Streamnet-Gateway is a gateway system supporting HTTP/HTTPS protocol, which consists of gateway service and manager service.
+Streamnet-Gateway 是一套支持http/https协议的网关系统，由gateway服务、manager服务构成。
 
-### Environment
-etcd service is necessary
+### 环境要求
+etcd安装
 
-### Why Designed
-Provide the load balance,visual configuration and hot effective for streamnet server.
+### 开发初衷
+提供针对streamnet服务器请求的负载均衡，做到可视化配置，热生效
 
-### Functional Characteristics
-+ Reverse proxy 
-+ Blacklist
-+ Access log
-+ Current limiting
-+ fuses [Wrong Fusing, Overtime Fusing, Forced Fusing]
-+ load balance [Polling, Random]
-+ Request path filtering, path level private load balancing
-+ Access statistics [Visit Volume, Visit Duration]
-+ Access copy [copy request data, response data]
+### 功能特性
++ 反向代理 
++ 黑名单
++ 访问日志
++ 限流
++ 熔断 【错误熔断、超时熔断、强制熔断】
++ 负载均衡 【轮询、随机】
++ 请求路径过滤、路径级私有负载均衡
++ 访问统计 【访问量、访问时长】
++ 访问拷贝 【复制请求数据、返回数据】
 
-#### Domain Configuration
+#### 域名配置
 ![hgw](https://github.com/triasteam/streamnet-gateway/blob/master/img/hgw.gif)
 
-#### Path Configuration & Request Interception
+#### 路径配置 请求拦截
 ![hgw-path](https://github.com/triasteam/streamnet-gateway/blob/master/img/hgw-path.gif)
 
-#### Forced Fusing
+#### 强制熔断
 ![hgw-breaker](https://github.com/triasteam/streamnet-gateway/blob/master/img/hgw-breaker.gif)
 
-#### Access statistics
+#### 访问统计
 ![domain-metrics](https://github.com/triasteam/streamnet-gateway/blob/master/img/metrics.png)
 
-## Install
+## 安装
 #### 1. 获取streamnet-gateway代码
 ```
 git clone https://github.com/triasteam/streamnet-gateway.git
 ```
 
-gateway Folder is the code of gateway service
+gateway文件夹是网关服务的核心代码
 
-manager Folder is the code for management service
+manager文件夹是控制服务的核心代码
 
 
-#### 2. Compile gateway service
+#### 2. 编译gateway
 ```
 go build gateway.go
 ```
 
-#### 3. Compile management service
+#### 3. 编译manager
 ```
 go build manager.go
 ```
 
-#### 4. Run Gateway
+#### 4. 运行gateway
 ```
 [root@localhost gateway]# ./gateway -h
 usage: gateway --ser-name=SER-NAME --addr=ADDR --etcd=ETCD [<flags>]
@@ -69,24 +68,24 @@ Flags:
       --version            Show application version.
 ```
 
-##### Paramater
---ser-name [gateway server name(address/ser-name)]
+##### 参数
+--ser-name 【gateway服务的识别名称】
 
---addr [gateway http listen address]
+--addr 【gateway http服务的监听地址】
 
---tls-addr [gateway https listen address]
+--tls-addr 【gateway https服务的监听地址】
 
---etcd [etcd service address]
+--etcd 【连接etcd服务的地址】
 
---u [etcd account]
+--u 【连接etcd服务的账户】
 
---p [etcd password]
+--p 【连接etcd服务的密码】
 
 ```
 ./gateway --ser-name=gateway-1 --addr=0.0.0.0:80 --etcd=127.0.0.1:2379
 ```
 
-#### 5. Run Manager
+#### 5. 运行manager
 ```
 [root@localhost manager]# ./manager -h
 usage: manager --addr=ADDR --etcd=ETCD [<flags>]
@@ -98,25 +97,24 @@ Flags:
       --u=""       Username: etcd username
       --p=""       Password: etcd password
 ```
-##### Paramater
---addr [manager service listen address]
+##### 参数
+--addr 【manager 服务的监听地址】
 
---etcd [etcd service address]
+--etcd 【连接etcd服务的地址】
 
---u [etcd account]
+--u 【连接etcd服务的账户】
 
---p [etcd password]
+--p 【连接etcd服务的密码】
 
 ```
 ./manager --addr=0.0.0.0:7000 --etcd=127.0.0.1:2379
 ```
 
-#### 6. Use Guide
-Use browser to view
-http://service address/admin/ 
+#### 6. 使用
+访问 manager监听的服务地址+/admin/ 管理gateway服务。
 
-<font color="red">**注**</font>： First time, please visit /admin/init.html to init account and password。
+<font color="red">**注**</font>： 自己搭建服务，第一次访问请先访问 /admin/init.html 初始化管理账号密码。
 
 
-## Thanks to
-[hwg](https://github.com/dmhao/hgw) 
+## 感谢
+[hwg](https://github.com/dmhao/hgw) 源码项目
